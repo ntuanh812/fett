@@ -1,0 +1,60 @@
+.form-register{
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tiêu đề */
+  .container h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Form label và input */
+  .ant-form-item-label > label {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .ant-input{
+    height: 40px;
+  }
+
+
+  .ant-input:focus,
+  .ant-input-password:focus {
+    border-color: #1890ff;
+    box-shadow: 0 0 5px rgba(24, 144, 255, 0.2);
+  }
+  
+  /* Nút đăng ký */
+  .ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .ant-btn-primary:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+  
+  /* Khoảng cách giữa các form items */
+  .ant-form-item {
+    margin-bottom: 20px;
+  }
+  
+  /* Alert (nếu có lỗi) */
+  .ant-alert {
+    margin-bottom: 20px;
+  }
+  
