@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axiosLocalApi from '../api/local-api';
 import '../style/ExamUsers.css';
 import Headers from '../Header';
+import Button from '../Header/btn-header';
+import SearchComponent from '../component/Search/SearchComponent';
 
 export default function ExamUsers() {
     // Lưu trữ danh sách người dùng thi
@@ -71,12 +73,8 @@ export default function ExamUsers() {
     return (
         <div>
             <Headers />
-            <section className='container-section'>
-                <div className="search-container">
-                    <input type="text" placeholder="Tìm kiếm bài thi..." />
-                    <i className="fas fa-search" />
-                </div>
-            </section>
+            <SearchComponent/>
+            <Button/>
 
             <div className='category-exam'>
                 <div className="container-exam">

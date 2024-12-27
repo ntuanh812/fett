@@ -3,6 +3,8 @@ import axiosLocalApi from '../api/local-api'; // Đảm bảo axios đã cấu h
 import Headers from '../Header';
 import { useNavigate } from 'react-router-dom';
 import '../style/RevisionUser.css';
+import Button from '../Header/btn-header';
+import SearchComponent from '../component/Search/SearchComponent';
 
 export default function RevisionUser() {
     const [subjects, setSubjects] = useState([]); // Lưu trữ dữ liệu môn học
@@ -50,14 +52,11 @@ export default function RevisionUser() {
 
     return (
         <div>
-            <Headers />
-
-            <section className='container-section'>
-                <div className="search-container">
-                    <input type="text" placeholder="Tìm kiếm bài thi..." />
-                    <i className="fas fa-search" />
-                </div>
-            </section>
+            <div className="header-head">
+            <Headers/>
+            <SearchComponent/>
+            <Button/>
+            </div>
 
             <section className='category-re'>
                 <div className="container-re">

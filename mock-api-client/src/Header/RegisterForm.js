@@ -17,7 +17,7 @@ const RegisterForm = () => {
         email: values.email,
         password: values.password,
       });
-
+      //
       const { token, user } = response.data;
 
       // Lưu token và thông tin người dùng vào localStorage
@@ -26,7 +26,7 @@ const RegisterForm = () => {
 
       // Hiển thị thông báo thành công
       message.success('Đăng ký thành công! Chuyển đến trang chủ');
-      navigate('/login')
+      navigate('/')
     } catch (error) {
       // Hiển thị thông báo lỗi
       const errorMessage = error.response?.data?.message || 'Đăng ký thất bại. Vui lòng thử lại!';
@@ -49,7 +49,18 @@ const RegisterForm = () => {
             width: 540,
           }}
         >
-          {/* Fullname */}
+          <Form.Item
+            label="Họ và tên"
+            name="fullname"
+            rules={[
+              {
+                required: true,
+                message: 'Vui lòng nhập Họ tên của bạn!',
+              },
+            ]}
+          >
+            <Input placeholder="Nhập họ tên" prefix={<UserOutlined />} />
+          </Form.Item>
           <Form.Item
             label="Tên người dùng"
             name="username"

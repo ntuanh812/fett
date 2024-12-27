@@ -1,5 +1,5 @@
 // import './AppExam.css';
-import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ExamUsers from './component/ExamUsers';
 import Exam from './component/Exam/Exam';
 import Result from './component/Exam/Result';

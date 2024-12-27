@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axiosLocalApi from '../api/local-api';
 import { useNavigate } from 'react-router-dom';  // Thêm hook useNavigate để chuyển hướng
 import '../style/Home.css';
+import Button from '../Header/btn-header';
+import SearchComponent from './Search/SearchComponent';
 
 export default function Home() {
   const [subjects, setSubjects] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); // Khởi tạo hook useNavigate
 
   useEffect(() => {
     const user = localStorage.getItem('user');
@@ -19,12 +20,6 @@ export default function Home() {
   const getAllSubjects = async () => {
     const resp = await axiosLocalApi.get('subjects' );
     setSubjects(resp.data);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    localStorage.removeItem('user');
-    navigate('/'); // Chuyển hướng về trang chủ khi đăng xuất
   };
 
   const elementSubjects = subjects.map((item, index) => {
@@ -49,10 +44,7 @@ export default function Home() {
 
           />
         <div>
-          <div className="search-bar">
-            <input placeholder="Tìm kiếm..." type="text" />
-            <i className="fas fa-search"></i>
-          </div>
+          <SearchComponent/>
 
           <div className="nav-links">
             <a href="/">TRANG CHỦ</a>
@@ -67,20 +59,9 @@ export default function Home() {
         src='hat.png'        // width={60}
       />
     </div>
-        <div className="auth-links">
-          {!isLoggedIn ? (
-            <>
-              <a href="/login" className="login">Đăng nhập</a>
-              <a href="/register" className="register">Đăng ký</a>
-            </>
-          ) : (
-            <div>
-              <h3 className="welcome">Xin chào</h3>
-              <button onClick={handleLogout}>Đăng xuất</button>
-            </div>
-          )}
-        </div>
+    <Button/>
       </header>
+      
 
       <main className="main-content">
 <div className="image-container">

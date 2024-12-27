@@ -9,6 +9,7 @@ function Login() {
   const [loading, setLoading] = useState(false); // Trạng thái đang tải
   const navigate = useNavigate(); // Điều hướng sau khi đăng nhập
 
+  
   const handleSubmit = async (values) => {
     setLoading(true);
     try { 
@@ -86,7 +87,6 @@ function Login() {
           <Form.Item>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <Checkbox>Ghi nhớ đăng nhập</Checkbox>
-              <a href="/forgot">Quên mật khẩu?</a>
             </div>
           </Form.Item>
           <Form.Item>

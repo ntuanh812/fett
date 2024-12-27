@@ -40,11 +40,7 @@ body {
     padding: 5px;
     font-size: 16px;
 }
-.header .search-bar i {
-    color: #ccc;
-    position: relative;
-    left: 15rem;
-}
+
 
 .header .nav-links {
     display: flex;
